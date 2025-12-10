@@ -3,7 +3,6 @@ set -euo pipefail
 set -x
 
 SCRIPT_DIR="$(cd -- "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PY_HOST="/opt/homebrew/opt/python@3.14/bin/python3.14"
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
   echo "This bootstrap expects macOS. Exiting." >&2
@@ -23,8 +22,8 @@ fi
 
 brew bundle --file="${SCRIPT_DIR}/Brewfile"
 
-if [[ ! -x "${PY_HOST}" ]]; then
-  echo "Python host not found at ${PY_HOST}. Ensure brew installed python@3.14." >&2
+if ! command -v python3 >/dev/null 2>&1; then
+  echo "python3 not found on PATH. Install via pyenv (e.g., pyenv install 3.11.9 && pyenv global 3.11.9) or brew install python, then re-run." >&2
   exit 1
 fi
 
