@@ -32,8 +32,6 @@ brew "htop"
 brew "httpie"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Python 3.14 for Vim/Neovim Python host
-brew "python@3.14"
 # Next-gen compiler infrastructure
 brew "llvm"
 # Ambitious Vim-fork focused on extensibility and agility
