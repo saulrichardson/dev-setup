@@ -3,6 +3,7 @@ set -euo pipefail
 set -x
 
 SCRIPT_DIR="$(cd -- "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PY_HOST="/opt/homebrew/opt/python@3.14/bin/python3.14"
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
   echo "This bootstrap expects macOS. Exiting." >&2
@@ -21,6 +22,11 @@ if ! command -v curl >/dev/null 2>&1; then
 fi
 
 brew bundle --file="${SCRIPT_DIR}/Brewfile"
+
+if [[ ! -x "${PY_HOST}" ]]; then
+  echo "Python host not found at ${PY_HOST}. Ensure brew installed python@3.14." >&2
+  exit 1
+fi
 
 mkdir -p "${HOME}/.vim/autoload" "${HOME}/.vim/colors" "${HOME}/.config/nvim"
 
