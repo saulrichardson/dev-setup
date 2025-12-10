@@ -18,7 +18,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 let mapleader=","  " easier leader key
-let g:python3_host_prog = '/opt/homebrew/opt/python@3.14/bin/python3.14'  " point Neovim/Vim to Python 3 host
+if executable('python3')
+  let g:python3_host_prog = exepath('python3')
+endif
 
 " General settings
 syntax on
