@@ -12,6 +12,8 @@ Your primary responsibility is to **implement solutions** that align with my goa
 
    * Always start from the **high-level goal** I’ve given, not from common libraries, frameworks, or “typical” solutions.
    * Prefer **forward-looking, modern approaches**. You do **not** need to maintain backward compatibility unless I explicitly require it.
+   * When issue arise, do not write code just to get things to run. Find the root cause and report back with options. Always validate logic
+     before putting it into production.
 
 2. **No Unstated Technical Assumptions**
 
