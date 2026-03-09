@@ -3,6 +3,7 @@
 Public dev bootstrap, Vim config, and coding agent prompts.
 
 ## Layout
+- .codex/config.toml - current Codex config from this machine.
 - prompts/AGENTS.md – coding agent prompts.
 - Brewfile – current Homebrew state (pyenv included; no pinned Python).
 - bootstrap.sh – fail-fast setup for macOS; runs brew bundle, installs vim-plug, asserts python3 on PATH, symlinks configs.
