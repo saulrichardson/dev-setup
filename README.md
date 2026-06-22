@@ -8,7 +8,6 @@ This repo is meant to be easy for a coding agent to inspect and modify. It is no
 
 Start with these files:
 
-- `AGENTS.md` - repo-specific guidance for coding agents.
 - `README.md` - usage, repo map, bootstrap flow, and validation commands.
 - `bootstrap.sh` - the executable setup flow.
 - `Brewfile` - Homebrew formulae and casks.
@@ -70,12 +69,10 @@ PYTHON_VERSION=3.14 NODE_VERSION=24 RUBY_VERSION=3.4.7 ./bootstrap.sh
 
 - `.codex/config.toml` - sanitized Codex config. Keep it safe for a public repo; do not add tokens, private paths, or local app state.
 - `.gitignore` - ignores local machine artifacts such as `.DS_Store`.
-- `AGENTS.md` - instructions for agents editing this repo.
 - `Brewfile` - declarative Homebrew dependencies.
 - `README.md` - this orientation document.
 - `bootstrap.sh` - macOS setup script.
 - `nvim/init.vim` - Neovim entrypoint that reuses `~/.vimrc`.
-- `prompts/AGENTS.md` - portable coding-agent prompt/instructions that can be copied or referenced elsewhere. This is user prompt content, not repo-maintenance guidance.
 - `vim/.vimrc` - Vim/Neovim plugin list, mappings, CoC extensions, and editor behavior.
 - `vim/coc-settings.json` - CoC settings linked into Vim and Neovim config locations.
 - `vim/colors/azimuth_night.vim` - custom colorscheme.
@@ -88,8 +85,7 @@ PYTHON_VERSION=3.14 NODE_VERSION=24 RUBY_VERSION=3.4.7 ./bootstrap.sh
 - Change Vim plugins or editor behavior: edit `vim/.vimrc`.
 - Change CoC settings: edit `vim/coc-settings.json`.
 - Change Codex defaults: edit `.codex/config.toml`, keeping it public-safe.
-- Change the agent prompt that gets stored with this setup: edit `prompts/AGENTS.md`.
-- Change instructions for agents maintaining this repo: edit root `AGENTS.md`.
+- Change repo navigation or maintenance guidance: edit `README.md`.
 
 ## Validation
 
