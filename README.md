@@ -25,7 +25,18 @@ chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 
-The script is intended to be idempotent and rerunnable.
+The script is intended to be idempotent and rerunnable. Run it as an executable script, not by sourcing it into the current shell.
+
+## Shell Model
+
+Modern macOS uses `zsh` as the default interactive shell. This repo keeps that model.
+
+- `bootstrap.sh` is a Bash script because Bash is predictable for installer logic and is available on macOS.
+- Running `./bootstrap.sh` does not change the login shell and does not switch the machine back to Bash.
+- Future interactive terminal setup is written to `~/.zshrc`, because that is where the day-to-day zsh dev environment should be initialized.
+- The managed `~/.zshrc` block configures Homebrew, `pyenv`, `fnm`, `rbenv`, `postgresql@18`, `rustup`, `direnv`, and `starship`.
+
+In short: Bash runs the bootstrap; zsh remains the normal shell.
 
 ## Bootstrap Flow
 
@@ -44,7 +55,7 @@ The script is intended to be idempotent and rerunnable.
 11. Link Vim, Neovim, CoC, and Codex config files.
 12. Install Vim/Neovim plugins.
 13. Install CoC extensions.
-14. Write a managed `.zshrc` block for Homebrew, `pyenv`, `fnm`, `rbenv`, `postgresql@18`, `rustup`, `direnv`, and `starship`.
+14. Write a managed `~/.zshrc` block for Homebrew, `pyenv`, `fnm`, `rbenv`, `postgresql@18`, `rustup`, `direnv`, and `starship`.
 
 ## Version Overrides
 
