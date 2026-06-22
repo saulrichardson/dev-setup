@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -44,7 +44,10 @@ endif
 " Enable hex color highlighting if Lua is available
 if has('nvim') || has('lua')
   lua << EOF
-  require('colorizer').setup()
+  local ok, colorizer = pcall(require, 'colorizer')
+  if ok then
+    colorizer.setup()
+  end
 EOF
 endif
 
@@ -65,4 +68,4 @@ let g:airline_powerline_fonts = 1
 
 " Automatically start NERDTree if no files specified
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && exists(':NERDTree') | NERDTree | endif

@@ -30,6 +30,8 @@ brew "go"
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Handy way to save and run project-specific commands
+brew "just"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Next-gen compiler infrastructure
@@ -38,16 +40,30 @@ brew "llvm"
 brew "neovim"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Cryptography and SSL/TLS toolkit used by language builds
+brew "openssl@3"
+# Package compiler/linker metadata used by native builds
+brew "pkgconf"
 # Object-relational database system
-brew "postgresql@14", restart_service: :changed
+brew "postgresql@18", restart_service: :changed
 # Python version management
 brew "pyenv"
 # Ruby version manager
 brew "rbenv"
+# GNU readline library used by language builds
+brew "readline"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: :changed
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
+brew "rustup"
+# Static analysis for shell scripts
+brew "shellcheck"
+# Formatter for shell scripts
+brew "shfmt"
+# SQLite library and CLI used by language builds
+brew "sqlite"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Terminal multiplexer
@@ -56,6 +72,12 @@ brew "tmux"
 brew "tree"
 # Internet file retriever
 brew "wget"
+# Extremely fast Python package installer and resolver
+brew "uv"
+# General-purpose data compression library used by language builds
+brew "xz"
+# Compression library used by language builds
+brew "zlib"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # App to build and share containerised applications and microservices
